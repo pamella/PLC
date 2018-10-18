@@ -22,7 +22,7 @@ instance Visible Int where
 -- Se t é um tipo que é uma instância de Eq e u também
 
 type Nome = String
-type Pessoa = M Nome | F Nome
+data Pessoa = M Nome | F Nome
 
 instance Show Pessoa where
     show (M n) = n

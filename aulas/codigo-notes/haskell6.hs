@@ -117,8 +117,8 @@ mfold2 (+) 0 [1..3]
 = 6
 -}
 
-mconcat :: [[t]] -> [t]
-mconcat l = foldr1 (++) l
+mconcat2 :: [[t]] -> [t]
+mconcat2 l = foldr1 (++) l
 
 ehPar :: Int -> Bool
 ehPar x = x `mod` 2 == 0

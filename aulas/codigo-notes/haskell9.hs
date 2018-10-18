@@ -35,7 +35,7 @@ clima _ = Quente
 
 -- Produto
 
-type Idade = int
+type Idade = Int
 data Pessoas = Pessoa Nome Idade deriving Show -- o 'Pessoa' funciona como uma tag
 -- :t Pessoa "Maria" 15 
 
@@ -66,11 +66,11 @@ ehCircular _ = False
 --ehCircular (Retangulo 3.4 2.0)
 --False
 
-figArea :: Fig -> Float
+figArea :: Figura -> Float
 figArea c = areaCirc c
 
-areaCirc :: Circ -> Float
-areaCirc (c f) = pi * f * f
+areaCirc :: Figura -> Float
+areaCirc (Circulo f) = pi * f * f
 
 data Expr = Lit Int --Criando uma linguagem de expressões
     | Add Expr Expr
