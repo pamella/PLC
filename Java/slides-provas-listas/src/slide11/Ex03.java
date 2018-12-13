@@ -3,9 +3,7 @@ package slide11;
 import java.util.Scanner;
 
 class Counter extends Thread {
-	private int id;
-	private int LIMIT;
-	private int count = 0;
+	private int id, count = 0, LIMIT;
 
 	public Counter(int id, int limit) {
 		this.id = id;
@@ -25,7 +23,10 @@ public class Ex03 {
 
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
+		
+		System.out.println("Enter the threads number.");
 		int threads = in.nextInt();
+		System.out.println("Enter the counter LIMIT.");
 		int limit = in.nextInt();
 
 		for (int i = 0; i < threads; i++) {

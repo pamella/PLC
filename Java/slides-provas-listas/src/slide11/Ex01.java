@@ -1,7 +1,5 @@
 package slide11;
 
-import java.util.Scanner;
-
 class Processor extends Thread {
 	private int id;
 	private int count = 0;
