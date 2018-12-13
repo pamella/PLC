@@ -1,9 +1,9 @@
---BancoDados = [(String, String)]
+type BancoDados = [(String, String)]
 
 l = [("João", "l1"), ("Maria", "l2")]
 
---emprestar :: BancoDados -> String -> String -> BancoDados
---emprestar bd nome livro = (nome, livro):[x | x <- bd]
+emprestar :: BancoDados -> String -> String -> BancoDados
+emprestar bd nome livro = (nome, livro):[x | x <- bd]
 
 -- foldl - é a função aplicada a um valor, cabeça da lista, e o segundo valor resulta do cálculo
 

@@ -41,7 +41,7 @@ data Pessoas = Pessoa Nome Idade deriving Show -- o 'Pessoa' funciona como uma t
 
 exibirNome :: Pessoas -> String
 exibirNome (Pessoa n i) = n
--- exibirNOme (Pessoa "Maria" 15)
+-- exibirNome (Pessoa "Maria" 15)
 -- Maria
 
 data Figura = Circulo Float
@@ -118,9 +118,9 @@ data Lista t = Nil | Const t (Lista t) deriving Show
 -- (Const 'a' Nil)
 -- (Const 'a' (Const 'b' Nil))
 
-tamanho :: Lista -> Int
-tamanho (Nil) = 0
-tamanho (Const _ l) = 1 + tamanho l
+-- tamanho :: Lista -> Int
+-- tamanho (Nil) = 0
+-- tamanho (Const _ l) = 1 + tamanho l
 
 data Arvore t = NilArv | No (Arvore t) t (Arvore t) deriving Show -- Maneira de descrever uma árvore
 

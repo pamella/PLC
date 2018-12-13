@@ -3,7 +3,7 @@ data Lista t = Nil | Cons t (Lista t) deriving Show
 exL = Cons 3 (Cons 4 (Cons 5 Nil))
 
 toList :: Lista t -> [t]
-toList [] = Nil
+toList Nil = []
 toList (Cons n l) = n : toList l
 
 fromList :: [t] -> Lista t
@@ -33,8 +33,8 @@ mapTree f (No n t1 t2) = (No (f n) (mapTree f t1) (mapTree f t2)) -- Não tenho 
 --Não tem um algoritmo geral que recebe como entrada 2 programas e diz: esses programas são iguais.
 --Por isso (Int -> Int) não é uma instância da classe Eq
 
-allEqual :: t -> t -> t -> Bool 
-allEqual x y z = (x == y) && (y == z) -- Não funciona pq não tem certeza se os tipos de t são instâncias de Eq, para serem comparados com Eq
+-- allEqual :: t -> t -> t -> Bool 
+-- allEqual x y z = (x == y) && (y == z) -- Não funciona pq não tem certeza se os tipos de t são instâncias de Eq, para serem comparados com Eq
 
 allEqual :: (Eq t) => t -> t -> t -> Bool -- Não é qualquer valor do tipo t, é qualquer valor t que seja uma instância de Eq
 allEqual x y z = (x == y) && (y == z) -- Agora funciona
@@ -63,9 +63,9 @@ instance Visible Bool where
 --size True --- 1
 --size False --- 1
 
-instance Visible t => Visible [t] where
-    toString = concat . (map toString) --"TrueFalse"
-    size = (foldr (+) 0) . (map size)
+-- instance Visible t => Visible [t] where
+--     toString = concat . (map toString) --"TrueFalse"
+--     size = (foldr (+) 0) . (map size)
 
 
 --Outra parte que não copiei o inicio
