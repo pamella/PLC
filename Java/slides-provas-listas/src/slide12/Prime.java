@@ -18,8 +18,8 @@ class Counter {
 public class Prime extends Thread {
 	static Counter c = new Counter(1);
 	private int id;
-	
-	public Prime(int id){
+
+	public Prime(int id) {
 		this.id = id;
 	}
 
@@ -30,19 +30,20 @@ public class Prime extends Thread {
 		}
 		// if not, then just check the odds
 		for (int i = 3; i * i <= n; i += 2) {
-			if (n % i == 0)
+			if (n % i == 0) {
 				return false;
+			}
 		}
 		return true;
 	}
-	
+
 	public void run() {
 		long j = 0;
 
-		while (j < 90) {
+		while (j < 200) {
 			j = c.getAndIncrement();
-			if(isPrime(j)) {
-				System.out.println("Thread " + id + " found the prime " + j);
+			if (isPrime(j)) {
+				System.out.println("Thread " + this.id + " found the prime " + j);
 			}
 		}
 	}
@@ -51,11 +52,11 @@ public class Prime extends Thread {
 		Scanner in = new Scanner(System.in);
 		System.out.println("Enter the amount of threads.");
 		int threads = in.nextInt();
-		
+
 		for (int i = 0; i < threads; i++) {
 			new Prime(i).start();
 		}
-		
+
 		in.close();
 	}
 
